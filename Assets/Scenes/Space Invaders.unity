@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 510239874}
   - component: {fileID: 510239873}
   - component: {fileID: 510239877}
+  - component: {fileID: 510239878}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -242,6 +243,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 510239872}
   speed: 4
+--- !u!114 &510239878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510239872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be9679493329f8644891dde1be75ff89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 7316149311416597180, guid: 26b6ccafafb616544a11f1e219e558c6, type: 3}
+  player: {fileID: 510239872}
 --- !u!1 &676663015
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +270,8 @@ GameObject:
   - component: {fileID: 676663017}
   - component: {fileID: 676663016}
   - component: {fileID: 676663020}
+  - component: {fileID: 676663021}
+  - component: {fileID: 676663022}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -367,6 +384,38 @@ MonoBehaviour:
   yAmplitude: 1
   yPeriod: 10
   yStart: 0
+--- !u!114 &676663021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676663015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf69650b03240d04c87a53905535bbdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3546686140131715639, guid: 50ee73a1ed3528a428861a5dac971386, type: 3}
+  enemy: {fileID: 676663015}
+  shootTimerMin: 1
+  shootTimerMax: 3
+  shootTimer: 0
+--- !u!114 &676663022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676663015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013337b1fb6e0a544b966bf5a7ae2404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 676663015}
+  bullet: {fileID: 7316149311416597180, guid: 26b6ccafafb616544a11f1e219e558c6, type: 3}
+  hitThreshold: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
