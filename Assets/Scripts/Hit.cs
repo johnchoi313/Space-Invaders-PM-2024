@@ -6,6 +6,7 @@ using UnityEngine;
 public class Hit : MonoBehaviour
 {
     public GameObject target;
+    public GameObject explosion;
 
     public string bulletTag = "PlayerBullet";
 
@@ -23,6 +24,8 @@ public class Hit : MonoBehaviour
             if (distance < hitThreshold)
             {
                 Debug.Log("Target with name " + target.name + " was hit!");
+                GameObject explosionCopy = Instantiate(explosion, target.transform.position, target.transform.rotation);
+                Destroy(explosionCopy, 3);
                 Destroy(bullet);
                 Destroy(target);
             }
