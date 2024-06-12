@@ -15,25 +15,27 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float dt = Time.deltaTime;
+
         //Move left with A key
         if (Input.GetKey(KeyCode.A))
         {
-            player.transform.Translate(-speed, 0, 0);
+            player.transform.Translate(-speed * dt, 0, 0);
         }
         //Move right with D key
         if (Input.GetKey(KeyCode.D))
         {
-            player.transform.Translate(speed, 0, 0);
+            player.transform.Translate(speed * dt, 0, 0);
         }
         //Move up with W key
         if (Input.GetKey(KeyCode.W))
         {
-            player.transform.Translate(0, speed, 0);
+            player.transform.Translate(0, speed * dt, 0);
         }
         //Move down with S key
         if (Input.GetKey(KeyCode.S))
         {
-            player.transform.Translate(0, -speed, 0);
+            player.transform.Translate(0, -speed * dt, 0);
         }
     }
 }
