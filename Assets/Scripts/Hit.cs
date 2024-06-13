@@ -28,10 +28,20 @@ public class Hit : MonoBehaviour
                 Debug.Log("Target with name " + target.name + " was hit!");
                 GameObject explosionCopy = Instantiate(explosion, target.transform.position, target.transform.rotation);
                 Destroy(explosionCopy, 3);
-                Destroy(bullet);
 
+                // If Player was hit by Boss
+                if (bulletTag != "Boss")
+                {
+                    Destroy(bullet);
+                }
+                if (bulletTag == "Boss")
+                {
+                    gameManager.DecreaseHealth(5);
+                    if (gameManager.health <= 0) { Destroy(target); }
+                }
+            
                 //If Enemy was hit
-                if(bulletTag == "PlayerBullet")
+                if (bulletTag == "PlayerBullet")
                 {
                     gameManager.IncreaseScore(1);
                     Destroy(target);
@@ -40,10 +50,7 @@ public class Hit : MonoBehaviour
                 if(bulletTag == "EnemyBullet")
                 {
                     gameManager.DecreaseHealth(1);
-                    if(gameManager.health <= 0)
-                    {
-                        Destroy(target);
-                    }
+                    if(gameManager.health <= 0) { Destroy(target); }
                 }
             }
         }

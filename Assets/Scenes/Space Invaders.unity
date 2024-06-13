@@ -685,6 +685,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &510239872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2892026885223903150, guid: 48890dd1b7842354a8f5bd36caaa457e, type: 3}
+  m_PrefabInstance: {fileID: 67616316929287459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &510239880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510239872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013337b1fb6e0a544b966bf5a7ae2404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 510239872}
+  explosion: {fileID: 4310220030080851878, guid: d0bf4945c82b58c43a24f0073380bb3b, type: 3}
+  bulletTag: Boss
+  hitThreshold: 3
+  gameManager: {fileID: 232295429}
 --- !u!1 &692459247
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,9 +720,10 @@ GameObject:
   - component: {fileID: 692459249}
   - component: {fileID: 692459248}
   - component: {fileID: 692459252}
+  - component: {fileID: 692459253}
   m_Layer: 0
   m_Name: BossCube
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -812,6 +835,25 @@ MonoBehaviour:
   attackTimer: 0
   attacking: 0
   attackSpeed: 6
+--- !u!114 &692459253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692459247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91211fa26749d0d429be05d594e4417a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 692459247}
+  explosion: {fileID: 4310220030080851878, guid: d0bf4945c82b58c43a24f0073380bb3b, type: 3}
+  bossAnimator: {fileID: 178556290}
+  bulletTag: PlayerBullet
+  hitThreshold: 3
+  bossHealth: 10
+  gameManager: {fileID: 232295429}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,7 +2225,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2892026885223903150, guid: 48890dd1b7842354a8f5bd36caaa457e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 510239880}
   m_SourcePrefab: {fileID: 100100000, guid: 48890dd1b7842354a8f5bd36caaa457e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
