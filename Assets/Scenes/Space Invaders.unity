@@ -835,6 +835,10 @@ MonoBehaviour:
   attackTimer: 0
   attacking: 0
   attackSpeed: 6
+  moveSpeed: 3
+  movingLeft: 1
+  xMin: -16
+  xMax: 16
 --- !u!114 &692459253
 MonoBehaviour:
   m_ObjectHideFlags: 0

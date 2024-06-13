@@ -17,6 +17,11 @@ public class Boss : MonoBehaviour
 
     public float attackSpeed = 6f;
 
+    public float moveSpeed = 3f;
+    public bool movingLeft = true;
+    public float xMin = -20f;
+    public float xMax = 20f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +43,11 @@ public class Boss : MonoBehaviour
             else
             {
                 waitTimer = waitTimer - dt;
+
+                if(movingLeft == true) { transform.Translate(-moveSpeed * dt, 0, 0); }
+                else { transform.Translate(moveSpeed * dt, 0, 0); }
+                if(transform.position.x < xMin) { movingLeft = false; }
+                if(transform.position.x > xMax) { movingLeft = true; }
             }
         }
         else
