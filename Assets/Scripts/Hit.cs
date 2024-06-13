@@ -12,6 +12,8 @@ public class Hit : MonoBehaviour
 
     public float hitThreshold = 1.0f;
 
+    public GameManager gameManager;
+
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +29,22 @@ public class Hit : MonoBehaviour
                 GameObject explosionCopy = Instantiate(explosion, target.transform.position, target.transform.rotation);
                 Destroy(explosionCopy, 3);
                 Destroy(bullet);
-                Destroy(target);
+
+                //If Enemy was hit
+                if(bulletTag == "PlayerBullet")
+                {
+                    gameManager.IncreaseScore(1);
+                    Destroy(target);
+                }
+                //If Player was hit
+                if(bulletTag == "EnemyBullet")
+                {
+                    gameManager.DecreaseHealth(1);
+                    if(gameManager.health <= 0)
+                    {
+                        Destroy(target);
+                    }
+                }
             }
         }
     }
